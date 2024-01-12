@@ -1,46 +1,63 @@
-import math
-from io import StringIO
-
-import pandas as pd
-import numpy as np
+from concurrent.futures import ThreadPoolExecutor
+import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
+import pandas as pd
 import requests
+import math
+import time
 
 
-def calculate_salary(salary_from, salary_to, currency, published_at):
+def calculate_salary(row):
+    salary_from = row['salary_from']
+    salary_to = row['salary_to']
+    currency = row['salary_currency']
+    published_at = row['published_at']
+
     if pd.isna(salary_from) and pd.isna(salary_to):
         return 0
-
     if pd.isna(salary_from):
         salary = math.floor(salary_to)
     elif pd.isna(salary_to):
         salary = math.floor(salary_from)
     else:
         salary = (salary_from + salary_to) / 2
-
     if currency == 'RUR':
         return salary
 
-    url = f'http://www.cbr.ru/scripts/XML_daily.asp'
-
     date = pd.to_datetime(published_at, format="%Y-%m-%d")
-    response = requests.get(url, params={'date_req': date.strftime('%d/%m/%Y')})
-    df = pd.read_xml(StringIO(response.text), xpath='.//Valute')
-    exchange_rate = df[df['CharCode'] == currency]['VunitRate'].values[0]
+    response = requests.get('http://www.cbr.ru/scripts/XML_daily.asp', params={'date_req': date.strftime('%d/%m/%Y')})
+    if response.status_code == 200:
+        # df = pd.read_xml(StringIO(response.text), xpath='.//Valute')
+        # exchange_rate = float(df[df['CharCode'] == currency]['VunitRate'].values[0].replace(',', '.'))
+        root = ET.fromstring(response.text)
+        valute = root.find(f".//Valute[CharCode='{currency}']")
+        exchange_rate = float(valute.find("VunitRate").text.replace(',', '.'))
+        #print((salary, currency, published_at, '-->', exchange_rate))
+        if pd.isna(exchange_rate):
+            return 0
 
-    if pd.isnan(exchange_rate):
+        return salary * exchange_rate
+    else:
         return 0
 
-    return salary * exchange_rate
+
+def calculate_salary_parallel(data):
+    with ThreadPoolExecutor() as executor:
+        results = executor.map(calculate_salary, data)
+    return list(results)
 
 
 def create_cur_data(csv='C:\\Users\\kiril\\PycharmProjects\\Web-App-on-Django\\files\\vacancies.csv'):
-    data = pd.read_csv(csv)
-    data['salary'] = data.apply(lambda row: calculate_salary(data['salary_from'], data['salary_to'],
-                                                             row['salary_currency'], row['published_at']), axis=1)
+    data = pd.read_csv(csv, nrows=10000)
+    start = time.time()
+    #data['salary'] = data.apply(lambda row: calculate_salary(row['salary_from'], row['salary_to'], row['salary_currency'], row['published_at']), axis=1)
+    data['salary'] = calculate_salary_parallel(data.to_dict('records'))
     data['published_at'] = data['published_at'].apply(lambda x: x[:10:])
     data['published_at'] = pd.to_datetime(data['published_at'], format="%Y-%m-%d")
     data['year'] = data['published_at'].dropna().dt.year
+    data.to_csv('C:\\Users\\kiril\\PycharmProjects\\Web-App-on-Django\\files\\vac.csv')
+    end = time.time()
+    print((end-start) * 10**3)
     return data
 
 
