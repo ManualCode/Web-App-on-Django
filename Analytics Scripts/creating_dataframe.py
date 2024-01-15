@@ -48,12 +48,10 @@ def calculate_salary(d, salary_from, salary_to, currency, published_at):
     if currency == 'RUR':
         return salary
 
-
-    #TODO: ПЕРЕДЕЛАТЬ БЫ, ЧТО-БЫ ЕСЛИ НЕТУУ ДАТЫ, БРАЛАСЬ СЛЕДУЮЩАЯ
     if published_at[:10] in d[currency]:
         exchange_rate = float(d[currency][published_at[:10]].replace(',', '.'))
     else:
-        return 0
+        exchange_rate = float(d[currency][f'01{published_at[2:10]}'].replace(',', '.'))
     salary = round(salary * exchange_rate, 2)
     if salary <= 1_500_000:
         return salary
