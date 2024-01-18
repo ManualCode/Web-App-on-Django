@@ -1,0 +1,141 @@
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f6fb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Основные свойства для бокового меню */
+.menu {
+  display: flex;
+  flex-direction: column; /* размещаем элементы к колонку */
+  width: 240px;
+  min-height: 100vh; /* на всю высоту экрана */
+  position: fixed; /* чтобы меню было фиксированным */
+  top: 0; /* прижимаем к верхнему */
+  left: 0; /* .. и нижнему краю */
+  background-color: #343951;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2); /* задаем тень, чтобы отделить от фона */
+}
+
+/* Свойства для контента */
+.content {
+  padding-left: 280px; /* отступ от бокового меню 240px + 40px */
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center; /* центрируем логотип с текстом */
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+}
+
+/* Задаем псеводоэлемент для иконки */
+.logo:before {
+  content: url(./img/logo.svg); /* путь от иконки-лого */
+  padding-right: 8px; /* немного отступим справа */
+}
+
+/* Позиционирование лого в меню */
+.menu__logo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  padding-top: 30px;
+  margin-bottom: 39px;
+}
+
+.menu__logo  h2 {
+  color: white;
+}
+
+.menu__logo img{
+  color: white;
+}
+
+/* Позиционирование элементов в меню */
+.menu__link,
+.admin__link {
+  padding-left: 15px;
+}
+
+/* Свойства для элементов меню */
+.link {
+  position: relative; /* чтобы задать потом псевдоэлемент */
+  display: flex; /* чтобы элемент тянулся на всю ширину */
+  align-items: center; /* по центру текст и иконка */
+  height: 45px; /* высота элемента 45px */
+  text-decoration: none;
+}
+
+/* Свойства иконки внутри ссылки */
+.link > img {
+  width: 25px;
+  margin-right: 20px;
+}
+
+/* Свойства текста внутри ссылки */
+.link > span {
+  font-family: "Karla", sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+.menu__list{
+  list-style-type:none;
+}
+
+/* При наведении на ссылку - полупрозрачный белый фон */
+.link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Выводим оранжевую линию слева */
+.link:hover:before {
+  display: flex;
+}
+
+/* Создаем оранжевую линию слева */
+.link:before {
+  content: "";
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #ffa000;
+}
+
+.menu__footer{
+  display: grid;
+  justify-content: center;
+}
+
+.menu__footer footer{
+  color: white;
+}
+
+.menu__footer footer span{
+  display: grid;
+  font-size: 24px;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Позиционирование админ-меню */
+.menu__admin {
+  margin-top: auto;
+  padding-bottom: 40px;
+}

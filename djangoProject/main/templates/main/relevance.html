@@ -1,13 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'main/base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block title %} Востребованность {% endblock %}
+
+
+{% block content %}
+    <h1>Востребованность</h1>
+    <img src="{% static "deps/images/salary_dynamics_for_data.png" %}" alt="bar1">
+    <img src="{% static "deps/images/salary_dynamics_for_filtred_data.png" %}" alt="bar2">
+    <img src="{% static "deps/images/vacancies_dynamics_for_data.png" %}" alt="bar3">
+    <img src="{% static "deps/images/vacancies_dynamics_for_filtred_data.png" %}" alt="bar4">
+
+{% endblock %}

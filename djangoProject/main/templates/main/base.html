@@ -1,43 +1,79 @@
-<!doctype html>
+{% load static %}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="C:\Users\kiril\PycharmProjects\Web-App-on-Django\djangoProject\main\static\main.css">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static "deps/css/main.css" %}">
+    <link rel="stylesheet" href="{% static "deps/css/index.css" %}">
+    <link rel="shortcut icon" href="{% static 'deps/favicon/logo.ico' %}">
 </head>
 <body>
-    <div class="left-menu">
-        <div class="head-l-menu">
-            <img src="C:\Users\kiril\PycharmProjects\Web-App-on-Django\djangoProject\main\image\logo.png" alt="logo-icon">
-            <h1>C#-Analytics</h1>
-        </div>
+    <section class="menu">
+      <!-- Логотип -->
+      <div class="menu__header">
+        <header class="menu__logo">
+        <img src="{% static "deps/icons/logotype.png" %}" alt="Logo" height=128px width=128px>
+        <h2>Revelation</h2>
+        </header>
+      </div>
 
-        <hr>
+      <hr>
 
-        <div class="menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Relevance</a></li>
-                <li><a href="#">Geography</a></li>
-                <li><a href="">Skills</a></li>
-            </ul>
-        </div>
+      <!-- Основное меню -->
+      <div class="main__menu">
+        <ul class="menu__list list">
+        <li class="menu__item item">
+          <a href="/" class="menu__link link">
+            <img src="{% static "deps/icons/home.svg" %}" alt="Home" />
+            <span>Главная</span>
+          </a>
+        </li>
+        <li class="menu__item item">
+          <a href="/relevance" class="menu__link link">
+            <img src="{% static "deps/icons/relevance.svg" %}" alt="Recents" />
+            <span>Востребованность</span>
+          </a>
+        </li>
+        <li class="menu__item item">
+          <a href="/geography" class="menu__link link">
+            <img src="{% static "deps/icons/geography.svg" %}" alt="Starred" />
+            <span>География</span>
+          </a>
+        </li>
+        <li class="menu__item item">
+          <a href="/skills" class="menu__link link">
+            <img src="{% static "deps/icons/skills.svg" %}" alt="Photos" />
+            <span>Навыки</span>
+          </a>
+        </li>
+        <li class="menu__item item">
+          <a href="/recent-vacancies" class="menu__link link">
+            <img src="{% static "deps/icons/recent.svg" %}" alt="Shared" />
+            <span>Последние вакансии</span>
+          </a>
+        </li>
+        </ul>
+      </div>
 
-        <hr>
+      <hr>
 
-        <div class="footer-menu">
-            <img src="#" alt="icon-image">
+      <div class="menu__footer">
+        <footer>
+          <span>Тимохов Кирилл Александрович</span>
+          <span>РИ-220910</span>
+        </footer>
+      </div>
+    </section>
 
-            <p>Timohov K.A.</p>
-        </div>
-    </div>
 
-
-    <div class="container">
-
-    </div>
+    <section class="content">
+      {% block content %}
+      {% endblock %}
+    </section>
 </body>
 </html>
