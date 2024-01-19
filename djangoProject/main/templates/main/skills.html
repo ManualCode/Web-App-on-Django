@@ -1,8 +1,67 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block title %} Навыки {% endblock %}
 
 
 {% block content %}
-    <h1>Навыки</h1>
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2015.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2016.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2017.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2018.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2019.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2020.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2021.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2022.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2023.png" %}" alt="bar{{ f }}">
+
+
+    <h3>ТОП-20 навыков по годам</h3>
+    <table style="border: 1px solid rgb(0, 0, 0);">
+      <thead>
+        <tr>
+            {% for i in frame.columns.values %}
+                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+            {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+            {% for index, value in frame.iterrows %}
+                <tr>
+                {% for n in value %}
+                    <td style="border: 1px solid rgb(0, 0, 0);">{{ n }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>ТОП-20 навыков по годам для C#-программиста</h3>
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2015_filtred.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2016_filtred.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2017_filtred.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2018_filtred.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2019_filtred.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2020_filtred.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2021_filtred.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2022_filtred.png" %}" alt="bar{{ f }}">
+    <img src="{% static "deps/images/graphs_for_geography/top_20_2023_filtred.png" %}" alt="bar{{ f }}">
+
+    <table style="border: 1px solid rgb(0, 0, 0);">
+      <thead>
+        <tr>
+            {% for i in filtred_frame.columns.values %}
+                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+            {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+            {% for index, value in filtred_frame.iterrows %}
+                <tr>
+                {% for n in value %}
+                    <td style="border: 1px solid rgb(0, 0, 0);">{{ n }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

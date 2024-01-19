@@ -6,6 +6,25 @@
 
 {% block content %}
     <h1>Востребованность</h1>
+    <table style="border: 1px solid rgb(0, 0, 0);">
+      <thead>
+        <tr>
+            {% for i in frame.columns.values %}
+                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+            {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+            {% for index, value in frame.iterrows %}
+                <tr>
+                {% for n in value %}
+                    <td style="border: 1px solid rgb(0, 0, 0);">{{ n }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     <img src="{% static "deps/images/salary_dynamics_for_data.png" %}" alt="bar1">
     <img src="{% static "deps/images/salary_dynamics_for_filtred_data.png" %}" alt="bar2">
     <img src="{% static "deps/images/vacancies_dynamics_for_data.png" %}" alt="bar3">

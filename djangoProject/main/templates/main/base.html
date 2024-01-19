@@ -9,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="{% static "deps/css/main.css" %}">
-    <link rel="stylesheet" href="{% static "deps/css/index.css" %}">
     <link rel="shortcut icon" href="{% static 'deps/favicon/logo.ico' %}">
 </head>
 <body>
+  <div class="container">
     <section class="menu">
       <!-- Логотип -->
       <div class="menu__header">
@@ -75,5 +75,6 @@
       {% block content %}
       {% endblock %}
     </section>
+  </div>
 </body>
 </html>

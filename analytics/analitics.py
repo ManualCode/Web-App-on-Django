@@ -15,32 +15,11 @@ def filter_data(data):
 
 
 def get_salary_dynamics(data):
-    salary_dynamics = data.fillna(0).groupby('year')['salary'].mean().astype(float).round().to_dict()
-
-    if len(salary_dynamics) != 21:
-        dict_ = {}
-        for i in range(2003, 2024):
-            if i in salary_dynamics:
-                dict_[str(i)] = salary_dynamics[i]
-            else:
-                dict_[str(i)] = 0
-
-        salary_dynamics = dict_
-    return salary_dynamics
+    return data.fillna(0).groupby('year')['salary'].mean().astype(float).round().to_dict()
 
 
 def get_vacancies_dynamics(data):
-    vacancy_dynamics = data.groupby('year')['name'].count().to_dict()
-    if len(vacancy_dynamics) != 21:
-        dict_ = {}
-        for i in range(2003, 2024):
-            if i in vacancy_dynamics:
-                dict_[str(i)] = vacancy_dynamics[i]
-            else:
-                dict_[str(i)] = 0
-
-        vacancy_dynamics = dict_
-    return vacancy_dynamics
+    return data.groupby('year')['name'].count().to_dict()
 
 
 def get_top_cities_salary(selected_data):

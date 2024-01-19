@@ -1,33 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
   background-color: #f5f6fb;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
 /* Основные свойства для бокового меню */
 .menu {
   display: flex;
   flex-direction: column; /* размещаем элементы к колонку */
-  width: 240px;
+  width: 270px;
   min-height: 100vh; /* на всю высоту экрана */
   position: fixed; /* чтобы меню было фиксированным */
   top: 0; /* прижимаем к верхнему */
   left: 0; /* .. и нижнему краю */
-  background-color: #343951;
+  background-color: #1f77b4;
   box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2); /* задаем тень, чтобы отделить от фона */
 }
 
 /* Свойства для контента */
 .content {
-  padding-left: 280px; /* отступ от бокового меню 240px + 40px */
-  padding-top: 40px;
-  padding-right: 40px;
-  padding-bottom: 40px;
+  padding: 40px 40px 40px 310px;
 }
 
 .header {

@@ -4,5 +4,28 @@
 
 
 {% block content %}
-    <h1>Последние вакансии</h1>
+    <h1>Последние вакансии C#-программист</h1>
+    <table style="border: 1px solid rgb(0, 0, 0);">
+      <thead>
+        <tr>
+            <th style="border: 1px solid rgb(0, 0, 0);">Название вакансии</th>
+            <th style="border: 1px solid rgb(0, 0, 0);">Описание вакансии</th>
+            <th style="border: 1px solid rgb(0, 0, 0);">Навыки</th>
+            <th style="border: 1px solid rgb(0, 0, 0);">Компания</th>
+            <th style="border: 1px solid rgb(0, 0, 0);">Оклад</th>
+            <th style="border: 1px solid rgb(0, 0, 0);">Название региона</th>
+            <th style="border: 1px solid rgb(0, 0, 0);">Дата публикации вакансии</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for vac in data %}
+        <tr>
+            {% for key, value in vac.items %}
+            <td style="border: 1px solid rgb(0, 0, 0);">{{value}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
 {% endblock %}
+

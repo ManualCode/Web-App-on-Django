@@ -6,8 +6,83 @@
 
 {% block content %}
     <h1>География</h1>
+    <table style="border: 1px solid rgb(0, 0, 0);">
+      <thead>
+        <tr>
+            {% for i in frame1.columns.values %}
+                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+            {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+            {% for index, value in frame1.iterrows %}
+                <tr>
+                {% for n in value %}
+                    <td style="border: 1px solid rgb(0, 0, 0);">{{ n }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <table style="border: 1px solid rgb(0, 0, 0);">
+      <thead>
+        <tr>
+            {% for i in frame2.columns.values %}
+                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+            {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+            {% for index, value in frame2.iterrows %}
+                <tr>
+                {% for n in value %}
+                    <td style="border: 1px solid rgb(0, 0, 0);">{{ n }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     <img src="{% static "deps/images/top_salary_for_data.png" %}" alt="bar1">
     <img src="{% static "deps/images/top_salary_for_filtred_data.png" %}" alt="bar1">
+
+    <table style="border: 1px solid rgb(0, 0, 0);">
+      <thead>
+        <tr>
+            {% for i in frame3.columns.values %}
+                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+            {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+            {% for index, value in frame3.iterrows %}
+                <tr>
+                {% for n in value %}
+                    <td style="border: 1px solid rgb(0, 0, 0);">{{ n }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <table style="border: 1px solid rgb(0, 0, 0);">
+      <thead>
+        <tr>
+            {% for i in frame4.columns.values %}
+                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+            {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+            {% for index, value in frame4.iterrows %}
+                <tr>
+                {% for n in value %}
+                    <td style="border: 1px solid rgb(0, 0, 0);">{{ n }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     <img src="{% static "deps/images/top_vacancies_for_data.png" %}" alt="bar1">
     <img src="{% static "deps/images/top_vacancies_for_filtred_data.png" %}" alt="bar1">
 

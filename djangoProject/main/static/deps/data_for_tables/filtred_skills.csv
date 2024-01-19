@@ -1,0 +1,21 @@
+,2015,2016,2017,2018,2019,2020,2021,2022,2023
+0,C#: 193,C#: 659,C#: 997,C#: 1650,C#: 2016,C#: 2349,C#: 3397,C#: 2461,C#: 1357
+1,ASP.NET: 98,.NET Framework: 362,.NET Framework: 615,.NET Framework: 1023,.NET Framework: 1139,.NET Framework: 1305,.NET Framework: 1768,.NET Framework: 1231,.NET Framework: 655
+2,.NET Framework: 93,ASP.NET: 340,ASP.NET: 516,ASP.NET: 794,ASP.NET: 926,ASP.NET: 849,ASP.NET: 1285,Git: 939,Git: 523
+3,MVC: 73,JavaScript: 227,JavaScript: 333,JavaScript: 592,SQL: 675,Git: 775,Git: 1140,ASP.NET: 877,ASP.NET: 497
+4,MS SQL: 62,MS SQL: 198,SQL: 291,SQL: 501,Git: 648,SQL: 739,SQL: 1040,SQL: 764,SQL: 492
+5,JavaScript: 54,ООП: 184,MS SQL: 281,MS SQL: 484,JavaScript: 627,JavaScript: 610,JavaScript: 838,ООП: 665,PostgreSQL: 377
+6,SQL: 49,SQL: 170,ООП: 259,Git: 442,MS SQL: 611,MS SQL: 589,ООП: 786,MS SQL: 591,ООП: 373
+7,Git: 48,MS SQL Server: 162,Git: 253,Entity Framework: 388,ООП: 446,ООП: 558,MS SQL: 784,JavaScript: 538,MS SQL: 346
+8,jQuery: 43,MVC: 161,MS SQL Server: 239,HTML: 386,MVC: 392,Entity Framework: 458,Entity Framework: 616,Entity Framework: 454,Entity Framework: 289
+9,MS Visual Studio: 40,Git: 133,MS Visual Studio: 228,ООП: 385,WPF: 374,MS SQL Server: 396,PostgreSQL: 610,.NET Core: 407,JavaScript: 268
+10,MS SQL Server: 38,MS Visual Studio: 126,MVC: 223,MVC: 380,MS Visual Studio: 348,WPF: 367,MS SQL Server: 574,PostgreSQL: 393,С#: 231
+11,HTML: 35,jQuery: 118,Entity Framework: 183,MS SQL Server: 331,Entity Framework: 334,MS Visual Studio: 356,WPF: 506,WPF: 342,.NET Core: 225
+12,ООП: 32,WPF: 114,jQuery: 181,WPF: 324,MS SQL Server: 324,HTML: 322,MS Visual Studio: 463,MS SQL Server: 298,WPF: 225
+13,LINQ: 32,HTML: 112,WPF: 174,MS Visual Studio: 321,HTML: 318,PostgreSQL: 322,MVC: 374,MS Visual Studio: 292,MS Visual Studio: 181
+14,HTML5: 22,Entity Framework: 108,HTML: 164,CSS: 320,CSS: 272,MVC: 280,CSS: 346,HTML: 287,HTML: 178
+15,CSS: 21,WCF: 94,CSS: 138,jQuery: 235,WCF: 231,Visual Studio C#: 259,HTML: 340,С#: 284,MVC: 161
+16,C++: 19,CSS: 92,Unity: 133,WCF: 221,jQuery: 211,Windows Forms: 236,Unity: 334,Английский язык: 272,Visual Studio C#: 158
+17,WPF: 18,С#: 83,WCF: 127,LINQ: 182,LINQ: 200,CSS: 227,С#: 308,MVC: 259,CSS: 151
+18,Transact-SQL: 18,C++: 83,LINQ: 117,C++: 175,Unity: 195,Unity: 227,Английский язык: 288,CSS: 238,Docker: 145
+19,Ajax: 17,LINQ: 82,С#: 111,С#: 172,C++: 192,jQuery: 225,.NET Core: 278,Visual Studio C#: 234,RabbitMQ: 137
