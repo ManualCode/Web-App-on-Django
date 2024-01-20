@@ -10,6 +10,8 @@
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="{% static "deps/css/main.css" %}">
     <link rel="shortcut icon" href="{% static 'deps/favicon/logo.ico' %}">
+    {% block links %}
+    {%endblock%}
 </head>
 <body>
   <div class="container">
@@ -20,9 +22,8 @@
         <img src="{% static "deps/icons/logotype.png" %}" alt="Logo" height=128px width=128px>
         <h2>Revelation</h2>
         </header>
+        <hr>
       </div>
-
-      <hr>
 
       <!-- Основное меню -->
       <div class="main__menu">
@@ -60,9 +61,9 @@
         </ul>
       </div>
 
-      <hr>
 
       <div class="menu__footer">
+        <hr>
         <footer>
           <span>Тимохов Кирилл Александрович</span>
           <span>РИ-220910</span>

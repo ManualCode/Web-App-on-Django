@@ -1,0 +1,22 @@
+.tables__{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+.tables__ table{
+    width: 500px;
+}
+
+.imgs_{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.table thead tr th{
+    background-color: lightgray;
+}

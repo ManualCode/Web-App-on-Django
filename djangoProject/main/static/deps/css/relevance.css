@@ -1,0 +1,13 @@
+.table_{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.imgs_{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+}

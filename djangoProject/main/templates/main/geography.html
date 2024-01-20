@@ -2,15 +2,19 @@
 {% load static %}
 
 {% block title %} География {% endblock %}
+{% block links %}
+    <link rel="stylesheet" href="{% static "deps/css/georraphy.css" %}">
+{% endblock %}
 
 
 {% block content %}
     <h1>География</h1>
-    <table style="border: 1px solid rgb(0, 0, 0);">
+    <div class="tables__">
+         <table style="border: 1px solid rgb(0, 0, 0);">
       <thead>
         <tr>
             {% for i in frame1.columns.values %}
-                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+                <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">{{ i }}</th>
             {% endfor %}
         </tr>
       </thead>
@@ -29,7 +33,7 @@
       <thead>
         <tr>
             {% for i in frame2.columns.values %}
-                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+                <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">{{ i }}</th>
             {% endfor %}
         </tr>
       </thead>
@@ -43,14 +47,19 @@
             {% endfor %}
         </tbody>
     </table>
-    <img src="{% static "deps/images/top_salary_for_data.png" %}" alt="bar1">
-    <img src="{% static "deps/images/top_salary_for_filtred_data.png" %}" alt="bar1">
+    </div>
 
-    <table style="border: 1px solid rgb(0, 0, 0);">
+    <div class="imgs_">
+        <img src="{% static "deps/images/top_salary_for_data.png" %}" alt="bar1">
+        <img src="{% static "deps/images/top_salary_for_filtred_data.png" %}" alt="bar1">
+    </div>
+
+    <div class="tables__">
+        <table style="border: 1px solid rgb(0, 0, 0);">
       <thead>
         <tr>
             {% for i in frame3.columns.values %}
-                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+                <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">{{ i }}</th>
             {% endfor %}
         </tr>
       </thead>
@@ -69,7 +78,7 @@
       <thead>
         <tr>
             {% for i in frame4.columns.values %}
-                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+                <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">{{ i }}</th>
             {% endfor %}
         </tr>
       </thead>
@@ -83,7 +92,11 @@
             {% endfor %}
         </tbody>
     </table>
-    <img src="{% static "deps/images/top_vacancies_for_data.png" %}" alt="bar1">
-    <img src="{% static "deps/images/top_vacancies_for_filtred_data.png" %}" alt="bar1">
+    </div>
+
+    <div class="imgs_">
+        <img src="{% static "deps/images/top_vacancies_for_data.png" %}" alt="bar1">
+        <img src="{% static "deps/images/top_vacancies_for_filtred_data.png" %}" alt="bar1">
+    </div>
 
 {% endblock %}

@@ -2,15 +2,18 @@
 {% load static %}
 
 {% block title %} Востребованность {% endblock %}
-
+{% block links %}
+    <link rel="stylesheet" href="{% static "deps/css/relevance.css" %}">
+{% endblock %}
 
 {% block content %}
     <h1>Востребованность</h1>
-    <table style="border: 1px solid rgb(0, 0, 0);">
+    <div class="table_">
+        <table style="border: 1px solid rgb(0, 0, 0); width: 1000px;">
       <thead>
         <tr>
             {% for i in frame.columns.values %}
-                <th style="border: 1px solid rgb(0, 0, 0);">{{ i }}</th>
+                <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">{{ i }}</th>
             {% endfor %}
         </tr>
       </thead>
@@ -23,11 +26,16 @@
                 </tr>
             {% endfor %}
         </tbody>
-    </table>
+        </table>
+    </div>
 
-    <img src="{% static "deps/images/salary_dynamics_for_data.png" %}" alt="bar1">
-    <img src="{% static "deps/images/salary_dynamics_for_filtred_data.png" %}" alt="bar2">
-    <img src="{% static "deps/images/vacancies_dynamics_for_data.png" %}" alt="bar3">
-    <img src="{% static "deps/images/vacancies_dynamics_for_filtred_data.png" %}" alt="bar4">
+    <div class="imgs_">
+        <img src="{% static "deps/images/salary_dynamics_for_data.png" %}" alt="bar1">
+        <img src="{% static "deps/images/salary_dynamics_for_filtred_data.png" %}" alt="bar2">
+    </div>
+    <div class="imgs_">
+        <img src="{% static "deps/images/vacancies_dynamics_for_data.png" %}" alt="bar3">
+        <img src="{% static "deps/images/vacancies_dynamics_for_filtred_data.png" %}" alt="bar4">
+    </div>
 
 {% endblock %}
