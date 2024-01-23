@@ -31,4 +31,4 @@ def skills(request):
 
 def recent_vacancies(request):
     data = get_new_vac.get_vacancies()
-    return render(request, "main/recent_vacancies.html", {'data': data})
+    return render(request, "main/recent_vacancies.html", {'data': data[::-1]})

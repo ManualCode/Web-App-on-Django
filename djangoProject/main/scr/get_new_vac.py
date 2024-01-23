@@ -30,7 +30,8 @@ def get_vacancies():
         vacancy_response = requests.get(vacancy_url)
         vacancy_data = vacancy_response.json()
         vacancy = {
-            "НазваниеSPASEвакансии": item.get("name"),
+            "id": item.get('id'),
+            "name": item.get("name"),
             "Описание(SPASE)вакансии": (re.sub(re.compile('<.*?>'), '', vacancy_data.get("description"))).replace('&quot;', ''),
             "Навыки": ", ".join(skill.get("name") for skill in vacancy_data.get("key_skills", [])),
             "Компания": item.get("employer", {}).get("name"),

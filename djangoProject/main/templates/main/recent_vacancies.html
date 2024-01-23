@@ -8,6 +8,7 @@
     <table style="border: 1px solid rgb(0, 0, 0);">
       <thead>
         <tr>
+            <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">Ссылка</th>
             <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">Название вакансии</th>
             <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">Описание вакансии</th>
             <th style="border: 1px solid rgb(0, 0, 0); background-color: lightgray">Навыки</th>
@@ -21,7 +22,11 @@
         {% for vac in data %}
         <tr>
             {% for key, value in vac.items %}
-            <td style="border: 1px solid rgb(0, 0, 0);">{{value}}</td>
+                {% if key == 'id' %}
+                    <td style="border: 1px solid rgb(0, 0, 0);"><a href="https://hh.ru/vacancy/{{value}}">Ссылка</a></td>
+                {% else %}
+                    <td style="border: 1px solid rgb(0, 0, 0);">{{value}}</td>
+                {% endif %}
             {% endfor %}
         </tr>
         {% endfor %}
